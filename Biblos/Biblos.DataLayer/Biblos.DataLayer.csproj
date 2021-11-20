@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>a562e8eb-deec-479e-9431-fb740c14c714</ProjectGuid>
+    <ProjectGuid>329093d4-db7a-4d39-a210-09dac7d5e72d</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Biblos.BusinessLogicLayer</RootNamespace>
-    <AssemblyName>Biblos.BusinessLogicLayer</AssemblyName>
+    <RootNamespace>Biblos.DataLayer</RootNamespace>
+    <AssemblyName>Biblos.DataLayer</AssemblyName>
     <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

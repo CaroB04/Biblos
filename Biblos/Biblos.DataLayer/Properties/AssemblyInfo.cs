@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // La información general de un ensamblado se controla mediante el siguiente 
 // conjunto de atributos. Cambie estos valores de atributo para modificar la información
 // asociada con un ensamblado.
-[assembly: AssemblyTitle("Biblos.BusinessLogicLayer")]
+[assembly: AssemblyTitle("Biblos.DataLayer")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("HP Inc.")]
-[assembly: AssemblyProduct("Biblos.BusinessLogicLayer")]
+[assembly: AssemblyProduct("Biblos.DataLayer")]
 [assembly: AssemblyCopyright("Copyright © HP Inc. 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // El siguiente GUID sirve como id. de typelib si este proyecto se expone a COM.
-[assembly: Guid("a562e8eb-deec-479e-9431-fb740c14c714")]
+[assembly: Guid("329093d4-db7a-4d39-a210-09dac7d5e72d")]
 
 // La información de versión de un ensamblado consta de los cuatro valores siguientes:
 //
