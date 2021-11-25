@@ -13,3 +13,18 @@ C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.BusinessLogicLayer\bin\Debug\EntityF
 C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.BusinessLogicLayer\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.BusinessLogicLayer\bin\Debug\EntityFramework.xml
 C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.BusinessLogicLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Elian\source\repos\Proyecto Biblos\Biblos\Biblos\Biblos.BusinessLogicLayer\bin\Debug\Biblos.BusinessLogicLayer.dll.config
+C:\Users\Elian\source\repos\Proyecto Biblos\Biblos\Biblos\Biblos.BusinessLogicLayer\bin\Debug\Biblos.BusinessLogicLayer.dll
+C:\Users\Elian\source\repos\Proyecto Biblos\Biblos\Biblos\Biblos.BusinessLogicLayer\bin\Debug\Biblos.BusinessLogicLayer.pdb
+C:\Users\Elian\source\repos\Proyecto Biblos\Biblos\Biblos\Biblos.BusinessLogicLayer\bin\Debug\Biblos.DataLayer.dll
+C:\Users\Elian\source\repos\Proyecto Biblos\Biblos\Biblos\Biblos.BusinessLogicLayer\bin\Debug\EntityFramework.dll
+C:\Users\Elian\source\repos\Proyecto Biblos\Biblos\Biblos\Biblos.BusinessLogicLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Elian\source\repos\Proyecto Biblos\Biblos\Biblos\Biblos.BusinessLogicLayer\bin\Debug\Biblos.DataLayer.pdb
+C:\Users\Elian\source\repos\Proyecto Biblos\Biblos\Biblos\Biblos.BusinessLogicLayer\bin\Debug\Biblos.DataLayer.dll.config
+C:\Users\Elian\source\repos\Proyecto Biblos\Biblos\Biblos\Biblos.BusinessLogicLayer\bin\Debug\EntityFramework.xml
+C:\Users\Elian\source\repos\Proyecto Biblos\Biblos\Biblos\Biblos.BusinessLogicLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Elian\source\repos\Proyecto Biblos\Biblos\Biblos\Biblos.BusinessLogicLayer\obj\Debug\Biblos.BusinessLogicLayer.csproj.AssemblyReference.cache
+C:\Users\Elian\source\repos\Proyecto Biblos\Biblos\Biblos\Biblos.BusinessLogicLayer\obj\Debug\Biblos.BusinessLogicLayer.csproj.CoreCompileInputs.cache
+C:\Users\Elian\source\repos\Proyecto Biblos\Biblos\Biblos\Biblos.BusinessLogicLayer\obj\Debug\Biblos.BusinessLogicLayer.csproj.CopyComplete
+C:\Users\Elian\source\repos\Proyecto Biblos\Biblos\Biblos\Biblos.BusinessLogicLayer\obj\Debug\Biblos.BusinessLogicLayer.dll
+C:\Users\Elian\source\repos\Proyecto Biblos\Biblos\Biblos\Biblos.BusinessLogicLayer\obj\Debug\Biblos.BusinessLogicLayer.pdb

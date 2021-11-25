@@ -56,11 +56,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BiblosContext.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="BiblosContext.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>BiblosContext.tt</DependentUpon>
-    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -71,10 +66,6 @@
     <Content Include="BiblosContext.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>BiblosContext.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="BiblosContext.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>BiblosContext.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>
