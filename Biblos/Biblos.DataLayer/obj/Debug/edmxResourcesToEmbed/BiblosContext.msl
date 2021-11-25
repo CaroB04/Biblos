@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BIBLOSModelStoreContainer" CdmEntityContainer="BIBLOSEntities">
+    <EntitySetMapping Name="AUTOR">
+      <EntityTypeMapping TypeName="BIBLOSModel.AUTOR">
+        <MappingFragment StoreEntitySet="AUTOR">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="C_NAME" ColumnName="_NAME" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BOOK">
+      <EntityTypeMapping TypeName="BIBLOSModel.BOOK">
+        <MappingFragment StoreEntitySet="BOOK">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="DATE_PUBLICATION" ColumnName="DATE_PUBLICATION" />
+          <ScalarProperty Name="EDITORIAL" ColumnName="EDITORIAL" />
+          <ScalarProperty Name="AUTOR" ColumnName="AUTOR" />
+          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SALES">
+      <EntityTypeMapping TypeName="BIBLOSModel.SALES">
+        <MappingFragment StoreEntitySet="SALES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CLIENT" ColumnName="CLIENT" />
+          <ScalarProperty Name="BOOK" ColumnName="BOOK" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="DATE_SALE" ColumnName="DATE_SALE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USERS">
+      <EntityTypeMapping TypeName="BIBLOSModel.USERS">
+        <MappingFragment StoreEntitySet="USERS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="C_NAME" ColumnName="_NAME" />
+          <ScalarProperty Name="EMAIL" ColumnName="EMAIL" />
+          <ScalarProperty Name="C_PASSWORD" ColumnName="_PASSWORD" />
+          <ScalarProperty Name="C_ROLE" ColumnName="_ROLE" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="ADD_SALE" FunctionName="BIBLOSModel.Store.ADD_SALE" />
+    <FunctionImportMapping FunctionImportName="GET_BOOKS" FunctionName="BIBLOSModel.Store.GET_BOOKS">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BIBLOSModel.GET_BOOKS_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="EDITORIAL" ColumnName="EDITORIAL" />
+          <ScalarProperty Name="DATE_PUBLICATION" ColumnName="DATE_PUBLICATION" />
+          <ScalarProperty Name="AUTOR" ColumnName="AUTOR" />
+          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GET_LESS_SOLD_BOOK" FunctionName="BIBLOSModel.Store.GET_LESS_SOLD_BOOK">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BIBLOSModel.GET_LESS_SOLD_BOOK_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="EDITORIAL" ColumnName="EDITORIAL" />
+          <ScalarProperty Name="DATE_PUBLICATION" ColumnName="DATE_PUBLICATION" />
+          <ScalarProperty Name="AUTOR" ColumnName="AUTOR" />
+          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+          <ScalarProperty Name="TOTAL_VENTAS" ColumnName="TOTAL_VENTAS" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GET_MOST_SOLD_BOOK" FunctionName="BIBLOSModel.Store.GET_MOST_SOLD_BOOK">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BIBLOSModel.GET_MOST_SOLD_BOOK_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="EDITORIAL" ColumnName="EDITORIAL" />
+          <ScalarProperty Name="DATE_PUBLICATION" ColumnName="DATE_PUBLICATION" />
+          <ScalarProperty Name="AUTOR" ColumnName="AUTOR" />
+          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+          <ScalarProperty Name="TOTAL_VENTAS" ColumnName="TOTAL_VENTAS" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GET_ONE_BOOK" FunctionName="BIBLOSModel.Store.GET_ONE_BOOK">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BIBLOSModel.GET_ONE_BOOK_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="EDITORIAL" ColumnName="EDITORIAL" />
+          <ScalarProperty Name="DATE_PUBLICATION" ColumnName="DATE_PUBLICATION" />
+          <ScalarProperty Name="AUTOR" ColumnName="AUTOR" />
+          <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GET_SALES_BY_DAY" FunctionName="BIBLOSModel.Store.GET_SALES_BY_DAY">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BIBLOSModel.GET_SALES_BY_DAY_Result">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="CLIENT" ColumnName="CLIENT" />
+          <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+          <ScalarProperty Name="QUANTITY" ColumnName="QUANTITY" />
+          <ScalarProperty Name="DATE_SALE" ColumnName="DATE_SALE" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="SELL_BOOK" FunctionName="BIBLOSModel.Store.SELL_BOOK" />
+  </EntityContainerMapping>
+</Mapping>

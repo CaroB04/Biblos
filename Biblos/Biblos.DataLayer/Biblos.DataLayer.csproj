@@ -43,6 +43,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -51,11 +53,65 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AUTOR.cs">
+      <DependentUpon>BiblosContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BiblosContext.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BiblosContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="BiblosContext.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BiblosContext.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="BOOK.cs">
+      <DependentUpon>BiblosContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GET_BOOKS_Result.cs">
+      <DependentUpon>BiblosContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GET_LESS_SOLD_BOOK_Result.cs">
+      <DependentUpon>BiblosContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GET_MOST_SOLD_BOOK_Result.cs">
+      <DependentUpon>BiblosContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GET_ONE_BOOK_Result.cs">
+      <DependentUpon>BiblosContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GET_SALES_BY_DAY_Result.cs">
+      <DependentUpon>BiblosContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SALES.cs">
+      <DependentUpon>BiblosContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="USERS.cs">
+      <DependentUpon>BiblosContext.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <EntityDeploy Include="BiblosContext.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BiblosContext.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="BiblosContext.edmx.diagram">
+      <DependentUpon>BiblosContext.edmx</DependentUpon>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BiblosContext.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>BiblosContext.edmx</DependentUpon>
+      <LastGenOutput>BiblosContext.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
