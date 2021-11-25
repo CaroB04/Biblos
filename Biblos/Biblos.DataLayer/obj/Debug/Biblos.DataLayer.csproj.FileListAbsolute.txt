@@ -1,0 +1,12 @@
+C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.DataLayer\bin\Debug\Biblos.DataLayer.dll.config
+C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.DataLayer\bin\Debug\Biblos.DataLayer.dll
+C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.DataLayer\bin\Debug\Biblos.DataLayer.pdb
+C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.DataLayer\bin\Debug\EntityFramework.dll
+C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.DataLayer\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.DataLayer\bin\Debug\EntityFramework.xml
+C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.DataLayer\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.DataLayer\obj\Debug\Biblos.DataLayer.csproj.AssemblyReference.cache
+C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.DataLayer\obj\Debug\Biblos.DataLayer.csproj.CoreCompileInputs.cache
+C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.DataLayer\obj\Debug\Biblos.DataLayer.csproj.CopyComplete
+C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.DataLayer\obj\Debug\Biblos.DataLayer.dll
+C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.DataLayer\obj\Debug\Biblos.DataLayer.pdb
