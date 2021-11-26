@@ -7,19 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Biblos.EntityLayer
+namespace Biblos.DataLayer
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     using System.Data.Entity.Core.Objects;
     using System.Linq;
-    using Biblos.DataLayer;
-
-    public partial class BIBLOSEntities : DbContext
+    
+    public partial class BIBLOS : DbContext
     {
-        public BIBLOSEntities()
-            : base("name=BIBLOSEntities")
+        public BIBLOS()
+            : base("name=BIBLOS")
         {
         }
     

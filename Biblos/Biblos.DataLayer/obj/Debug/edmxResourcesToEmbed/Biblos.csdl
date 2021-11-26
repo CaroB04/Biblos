@@ -1,0 +1,170 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BiblosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="AUTOR">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="C_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="BOOK" Relationship="Self.FK__BOOK__AUTOR__3C69FB99" FromRole="AUTOR" ToRole="BOOK" />
+  </EntityType>
+  <EntityType Name="BOOK">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ISBN" Type="String" MaxLength="13" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="TITLE" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="DATE_PUBLICATION" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="EDITORIAL" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="AUTOR" Type="Int32" Nullable="false" />
+    <Property Name="STOCK" Type="Int32" />
+    <NavigationProperty Name="AUTOR1" Relationship="Self.FK__BOOK__AUTOR__3C69FB99" FromRole="BOOK" ToRole="AUTOR" />
+    <NavigationProperty Name="SALES" Relationship="Self.FK__SALES__BOOK__412EB0B6" FromRole="BOOK" ToRole="SALES" />
+  </EntityType>
+  <EntityType Name="SALES">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CLIENT" Type="Int32" Nullable="false" />
+    <Property Name="BOOK" Type="Int32" Nullable="false" />
+    <Property Name="QUANTITY" Type="Int32" />
+    <Property Name="DATE_SALE" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="BOOK1" Relationship="Self.FK__SALES__BOOK__412EB0B6" FromRole="SALES" ToRole="BOOK" />
+    <NavigationProperty Name="USERS" Relationship="Self.FK__SALES__CLIENT__403A8C7D" FromRole="SALES" ToRole="USERS" />
+  </EntityType>
+  <EntityType Name="USERS">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="C_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="EMAIL" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="C_PASSWORD" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="C_ROLE" Type="String" MaxLength="10" FixedLength="false" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="SALES" Relationship="Self.FK__SALES__CLIENT__403A8C7D" FromRole="USERS" ToRole="SALES" />
+  </EntityType>
+  <Association Name="FK__BOOK__AUTOR__3C69FB99">
+    <End Role="AUTOR" Type="Self.AUTOR" Multiplicity="1" />
+    <End Role="BOOK" Type="Self.BOOK" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="AUTOR">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="BOOK">
+        <PropertyRef Name="AUTOR" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SALES__BOOK__412EB0B6">
+    <End Role="BOOK" Type="Self.BOOK" Multiplicity="1" />
+    <End Role="SALES" Type="Self.SALES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="BOOK">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SALES">
+        <PropertyRef Name="BOOK" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__SALES__CLIENT__403A8C7D">
+    <End Role="USERS" Type="Self.USERS" Multiplicity="1" />
+    <End Role="SALES" Type="Self.SALES" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="USERS">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="SALES">
+        <PropertyRef Name="CLIENT" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BIBLOS" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="AUTOR" EntityType="Self.AUTOR" />
+    <EntitySet Name="BOOK" EntityType="Self.BOOK" />
+    <EntitySet Name="SALES" EntityType="Self.SALES" />
+    <EntitySet Name="USERS" EntityType="Self.USERS" />
+    <AssociationSet Name="FK__BOOK__AUTOR__3C69FB99" Association="Self.FK__BOOK__AUTOR__3C69FB99">
+      <End Role="AUTOR" EntitySet="AUTOR" />
+      <End Role="BOOK" EntitySet="BOOK" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SALES__BOOK__412EB0B6" Association="Self.FK__SALES__BOOK__412EB0B6">
+      <End Role="BOOK" EntitySet="BOOK" />
+      <End Role="SALES" EntitySet="SALES" />
+    </AssociationSet>
+    <AssociationSet Name="FK__SALES__CLIENT__403A8C7D" Association="Self.FK__SALES__CLIENT__403A8C7D">
+      <End Role="USERS" EntitySet="USERS" />
+      <End Role="SALES" EntitySet="SALES" />
+    </AssociationSet>
+    <FunctionImport Name="ADD_SALE">
+      <Parameter Name="CLIENT" Mode="In" Type="Int32" />
+      <Parameter Name="BOOK" Mode="In" Type="Int32" />
+      <Parameter Name="QUANTITY" Mode="In" Type="Int32" />
+      <Parameter Name="DATE_SALE" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GET_BOOKS" ReturnType="Collection(BiblosModel.GET_BOOKS_Result)" />
+    <FunctionImport Name="GET_LESS_SOLD_BOOK" ReturnType="Collection(BiblosModel.GET_LESS_SOLD_BOOK_Result)">
+      <Parameter Name="DATE" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GET_MOST_SOLD_BOOK" ReturnType="Collection(BiblosModel.GET_MOST_SOLD_BOOK_Result)">
+      <Parameter Name="DATE" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="GET_ONE_BOOK" ReturnType="Collection(BiblosModel.GET_ONE_BOOK_Result)">
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="GET_SALES_BY_DAY" ReturnType="Collection(BiblosModel.GET_SALES_BY_DAY_Result)">
+      <Parameter Name="DATE" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <FunctionImport Name="SELL_BOOK">
+      <Parameter Name="QUANTITY_BOOKS" Mode="In" Type="Int32" />
+      <Parameter Name="ID" Mode="In" Type="Int32" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="GET_BOOKS_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="ISBN" Nullable="false" MaxLength="13" />
+    <Property Type="String" Name="TITLE" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="EDITORIAL" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="DATE_PUBLICATION" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="AUTOR" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="STOCK" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GET_LESS_SOLD_BOOK_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="ISBN" Nullable="false" MaxLength="13" />
+    <Property Type="String" Name="TITLE" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="EDITORIAL" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="DATE_PUBLICATION" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="AUTOR" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="STOCK" Nullable="true" />
+    <Property Type="Int32" Name="TOTAL_VENTAS" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GET_MOST_SOLD_BOOK_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="ISBN" Nullable="false" MaxLength="13" />
+    <Property Type="String" Name="TITLE" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="EDITORIAL" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="DATE_PUBLICATION" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="AUTOR" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="STOCK" Nullable="true" />
+    <Property Type="Int32" Name="TOTAL_VENTAS" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GET_ONE_BOOK_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="ISBN" Nullable="false" MaxLength="13" />
+    <Property Type="String" Name="TITLE" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="EDITORIAL" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="DATE_PUBLICATION" Nullable="true" MaxLength="4" />
+    <Property Type="String" Name="AUTOR" Nullable="true" MaxLength="50" />
+    <Property Type="Int32" Name="STOCK" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="GET_SALES_BY_DAY_Result">
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="CLIENT" Nullable="false" MaxLength="50" />
+    <Property Type="String" Name="TITLE" Nullable="false" MaxLength="100" />
+    <Property Type="Int32" Name="QUANTITY" Nullable="true" />
+    <Property Type="DateTime" Name="DATE_SALE" Nullable="false" />
+  </ComplexType>
+</Schema>

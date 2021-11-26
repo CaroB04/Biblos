@@ -51,7 +51,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AutorBusiness.cs" />
+    <Compile Include="BookBusiness.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SalesBusiness.cs" />
+    <Compile Include="UsersBusineess.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Biblos.DataLayer\Biblos.DataLayer.csproj">

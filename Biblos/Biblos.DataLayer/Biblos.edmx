@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="BIBLOSModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="BiblosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="AUTOR">
           <Key>
             <PropertyRef Name="ID" />
@@ -103,7 +103,7 @@
           <Parameter Name="QUANTITY_BOOKS" Type="int" Mode="In" />
           <Parameter Name="ID" Type="int" Mode="In" />
         </Function>
-        <EntityContainer Name="BIBLOSModelStoreContainer">
+        <EntityContainer Name="BiblosModelStoreContainer">
           <EntitySet Name="AUTOR" EntityType="Self.AUTOR" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="BOOK" EntityType="Self.BOOK" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SALES" EntityType="Self.SALES" Schema="dbo" store:Type="Tables" />
@@ -125,7 +125,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="BIBLOSModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="BiblosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="AUTOR">
           <Key>
             <PropertyRef Name="ID" />
@@ -207,7 +207,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="BIBLOSEntities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="BIBLOS" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="AUTOR" EntityType="Self.AUTOR" />
           <EntitySet Name="BOOK" EntityType="Self.BOOK" />
           <EntitySet Name="SALES" EntityType="Self.SALES" />
@@ -230,17 +230,17 @@
             <Parameter Name="QUANTITY" Mode="In" Type="Int32" />
             <Parameter Name="DATE_SALE" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="GET_BOOKS" ReturnType="Collection(BIBLOSModel.GET_BOOKS_Result)" />
-          <FunctionImport Name="GET_LESS_SOLD_BOOK" ReturnType="Collection(BIBLOSModel.GET_LESS_SOLD_BOOK_Result)">
+          <FunctionImport Name="GET_BOOKS" ReturnType="Collection(BiblosModel.GET_BOOKS_Result)" />
+          <FunctionImport Name="GET_LESS_SOLD_BOOK" ReturnType="Collection(BiblosModel.GET_LESS_SOLD_BOOK_Result)">
             <Parameter Name="DATE" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="GET_MOST_SOLD_BOOK" ReturnType="Collection(BIBLOSModel.GET_MOST_SOLD_BOOK_Result)">
+          <FunctionImport Name="GET_MOST_SOLD_BOOK" ReturnType="Collection(BiblosModel.GET_MOST_SOLD_BOOK_Result)">
             <Parameter Name="DATE" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="GET_ONE_BOOK" ReturnType="Collection(BIBLOSModel.GET_ONE_BOOK_Result)">
+          <FunctionImport Name="GET_ONE_BOOK" ReturnType="Collection(BiblosModel.GET_ONE_BOOK_Result)">
             <Parameter Name="ID" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="GET_SALES_BY_DAY" ReturnType="Collection(BIBLOSModel.GET_SALES_BY_DAY_Result)">
+          <FunctionImport Name="GET_SALES_BY_DAY" ReturnType="Collection(BiblosModel.GET_SALES_BY_DAY_Result)">
             <Parameter Name="DATE" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="SELL_BOOK">
@@ -298,9 +298,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="BIBLOSModelStoreContainer" CdmEntityContainer="BIBLOSEntities">
+        <EntityContainerMapping StorageEntityContainer="BiblosModelStoreContainer" CdmEntityContainer="BIBLOS">
           <EntitySetMapping Name="AUTOR">
-            <EntityTypeMapping TypeName="BIBLOSModel.AUTOR">
+            <EntityTypeMapping TypeName="BiblosModel.AUTOR">
               <MappingFragment StoreEntitySet="AUTOR">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="C_NAME" ColumnName="_NAME" />
@@ -308,7 +308,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="BOOK">
-            <EntityTypeMapping TypeName="BIBLOSModel.BOOK">
+            <EntityTypeMapping TypeName="BiblosModel.BOOK">
               <MappingFragment StoreEntitySet="BOOK">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ISBN" ColumnName="ISBN" />
@@ -321,7 +321,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="SALES">
-            <EntityTypeMapping TypeName="BIBLOSModel.SALES">
+            <EntityTypeMapping TypeName="BiblosModel.SALES">
               <MappingFragment StoreEntitySet="SALES">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="CLIENT" ColumnName="CLIENT" />
@@ -332,7 +332,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="USERS">
-            <EntityTypeMapping TypeName="BIBLOSModel.USERS">
+            <EntityTypeMapping TypeName="BiblosModel.USERS">
               <MappingFragment StoreEntitySet="USERS">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="C_NAME" ColumnName="_NAME" />
@@ -342,10 +342,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="ADD_SALE" FunctionName="BIBLOSModel.Store.ADD_SALE" />
-          <FunctionImportMapping FunctionImportName="GET_BOOKS" FunctionName="BIBLOSModel.Store.GET_BOOKS">
+          <FunctionImportMapping FunctionImportName="ADD_SALE" FunctionName="BiblosModel.Store.ADD_SALE" />
+          <FunctionImportMapping FunctionImportName="GET_BOOKS" FunctionName="BiblosModel.Store.GET_BOOKS">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="BIBLOSModel.GET_BOOKS_Result">
+              <ComplexTypeMapping TypeName="BiblosModel.GET_BOOKS_Result">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ISBN" ColumnName="ISBN" />
                 <ScalarProperty Name="TITLE" ColumnName="TITLE" />
@@ -356,23 +356,9 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GET_LESS_SOLD_BOOK" FunctionName="BIBLOSModel.Store.GET_LESS_SOLD_BOOK">
+          <FunctionImportMapping FunctionImportName="GET_LESS_SOLD_BOOK" FunctionName="BiblosModel.Store.GET_LESS_SOLD_BOOK">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="BIBLOSModel.GET_LESS_SOLD_BOOK_Result">
-                <ScalarProperty Name="ID" ColumnName="ID" />
-                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
-                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
-                <ScalarProperty Name="EDITORIAL" ColumnName="EDITORIAL" />
-                <ScalarProperty Name="DATE_PUBLICATION" ColumnName="DATE_PUBLICATION" />
-                <ScalarProperty Name="AUTOR" ColumnName="AUTOR" />
-                <ScalarProperty Name="STOCK" ColumnName="STOCK" />
-                <ScalarProperty Name="TOTAL_VENTAS" ColumnName="TOTAL_VENTAS" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GET_MOST_SOLD_BOOK" FunctionName="BIBLOSModel.Store.GET_MOST_SOLD_BOOK">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="BIBLOSModel.GET_MOST_SOLD_BOOK_Result">
+              <ComplexTypeMapping TypeName="BiblosModel.GET_LESS_SOLD_BOOK_Result">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ISBN" ColumnName="ISBN" />
                 <ScalarProperty Name="TITLE" ColumnName="TITLE" />
@@ -384,9 +370,23 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GET_ONE_BOOK" FunctionName="BIBLOSModel.Store.GET_ONE_BOOK">
+          <FunctionImportMapping FunctionImportName="GET_MOST_SOLD_BOOK" FunctionName="BiblosModel.Store.GET_MOST_SOLD_BOOK">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="BIBLOSModel.GET_ONE_BOOK_Result">
+              <ComplexTypeMapping TypeName="BiblosModel.GET_MOST_SOLD_BOOK_Result">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="ISBN" ColumnName="ISBN" />
+                <ScalarProperty Name="TITLE" ColumnName="TITLE" />
+                <ScalarProperty Name="EDITORIAL" ColumnName="EDITORIAL" />
+                <ScalarProperty Name="DATE_PUBLICATION" ColumnName="DATE_PUBLICATION" />
+                <ScalarProperty Name="AUTOR" ColumnName="AUTOR" />
+                <ScalarProperty Name="STOCK" ColumnName="STOCK" />
+                <ScalarProperty Name="TOTAL_VENTAS" ColumnName="TOTAL_VENTAS" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GET_ONE_BOOK" FunctionName="BiblosModel.Store.GET_ONE_BOOK">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BiblosModel.GET_ONE_BOOK_Result">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="ISBN" ColumnName="ISBN" />
                 <ScalarProperty Name="TITLE" ColumnName="TITLE" />
@@ -397,9 +397,9 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="GET_SALES_BY_DAY" FunctionName="BIBLOSModel.Store.GET_SALES_BY_DAY">
+          <FunctionImportMapping FunctionImportName="GET_SALES_BY_DAY" FunctionName="BiblosModel.Store.GET_SALES_BY_DAY">
             <ResultMapping>
-              <ComplexTypeMapping TypeName="BIBLOSModel.GET_SALES_BY_DAY_Result">
+              <ComplexTypeMapping TypeName="BiblosModel.GET_SALES_BY_DAY_Result">
                 <ScalarProperty Name="ID" ColumnName="ID" />
                 <ScalarProperty Name="CLIENT" ColumnName="CLIENT" />
                 <ScalarProperty Name="TITLE" ColumnName="TITLE" />
@@ -408,7 +408,7 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="SELL_BOOK" FunctionName="BIBLOSModel.Store.SELL_BOOK" />
+          <FunctionImportMapping FunctionImportName="SELL_BOOK" FunctionName="BiblosModel.Store.SELL_BOOK" />
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

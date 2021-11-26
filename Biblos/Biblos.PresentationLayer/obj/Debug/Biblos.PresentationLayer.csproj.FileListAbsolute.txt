@@ -83,3 +83,4 @@ C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.PresentationLayer\obj\Debug\Biblos.P
 C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.PresentationLayer\obj\Debug\Biblos.PresentationLayer.csproj.CopyComplete
 C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.PresentationLayer\obj\Debug\Biblos.PresentationLayer.dll
 C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.PresentationLayer\obj\Debug\Biblos.PresentationLayer.pdb
+C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.PresentationLayer\obj\Debug\Biblos.PresentationLayer.csproj.AssemblyReference.cache

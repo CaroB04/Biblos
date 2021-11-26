@@ -5,7 +5,6 @@ C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.DataLayer\bin\Debug\EntityFramework.
 C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.DataLayer\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.DataLayer\bin\Debug\EntityFramework.xml
 C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.DataLayer\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.DataLayer\obj\Debug\Biblos.DataLayer.csproj.AssemblyReference.cache
 C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.DataLayer\obj\Debug\Biblos.DataLayer.csproj.CoreCompileInputs.cache
 C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.DataLayer\obj\Debug\Biblos.DataLayer.csproj.CopyComplete
 C:\Users\ronal\Desktop\Biblos\Biblos\Biblos.DataLayer\obj\Debug\Biblos.DataLayer.dll
