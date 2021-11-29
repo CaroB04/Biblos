@@ -1,0 +1,47 @@
+﻿@using Biblos.DataLayer
+@model IEnumerable<BOOK>
+
+@{
+    ViewBag.Title = "Biblos";
+}
+
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/72/NYC_-_New_York_City_Library_-_1723.jpg" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://images.unsplash.com/photo-1588591644329-ea4fd16fc6f3?ixid=MnwyMjE0NzF8MHwxfGFsbHx8fHx8fHx8fDE2MjYwOTcyNjU&ixlib=rb-1.2.1&fm=jpg&q=85&fit=crop&w=1500&h=800" class="d-block w-100" alt="...">
+        </div>
+        <div class="carousel-item">
+            <img src="https://www.simmons.edu/sites/default/files/styles/2160w/public/2020-10/library.jpg?itok=L9CgGyAD" class="d-block w-100" alt="...">
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5">
+    <div class="row">
+
+        @{
+            foreach (var item in Model)
+            {
+                <div class="col-4">
+                    <div class="card text-center">
+                        <div class="card-header">
+                            @item.AUTOR1.C_NAME
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">@item.TITLE</h5>
+                            <p class="card-text">@item.EDITORIAL</p>
+                            <a href="@Url.Action("Comprar","Sales", new { id = item.ID } )" class="btn btn-primary">Comprar</a>
+                        </div>
+                        <div class="card-footer text-muted">
+                            @item.STOCK Disponibles
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+
+    </div>
+</div>

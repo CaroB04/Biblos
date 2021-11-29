@@ -1,0 +1,75 @@
+﻿@model Biblos.DataLayer.USERS
+
+@{
+    ViewBag.Title = "Registro";
+}
+@section styles{
+    <style>
+        body {
+            background-color: #B8E2F2;
+        }
+    </style>
+}
+
+<div class="text-center my-3">
+    <img src="https://www.hcpc-uk.org/globalassets/image-library/icons/icon-register-800x600.gif" / width="250vw">
+
+    <h2>Registrarse</h2>
+</div>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <hr />
+        @Html.HiddenFor(model => model.C_ROLE, new { Value = "Usuario" })
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.Label("Nombre Completo", htmlAttributes: new { @class = "control-label offset-3 col-md-2" })
+            <div class="input-group offset-3 col-md-6">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">📄</div>
+                </div>
+                @Html.EditorFor(model => model.C_NAME, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.C_NAME, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Correo Electrónico", htmlAttributes: new { @class = "control-label offset-3 col-md-2" })
+            <div class="input-group offset-3 col-md-6">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">👤</div>
+                </div>
+                @Html.EditorFor(model => model.EMAIL, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.EMAIL, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.Label("Contraseña", htmlAttributes: new { @class = "control-label offset-3  col-md-2" })
+            <div class="input-group offset-3 col-md-6">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">🔒</div>
+                </div>
+                @Html.EditorFor(model => model.C_PASSWORD, new { htmlAttributes = new { @class = "form-control", type = "Password" } })
+                @Html.ValidationMessageFor(model => model.C_PASSWORD, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group text-center">
+            <div class="col-md-12">
+                <input type="submit" value="Registrarse" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Regresar", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
