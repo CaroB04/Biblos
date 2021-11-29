@@ -10,12 +10,11 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Biblos.DataLayer</RootNamespace>
     <AssemblyName>Biblos.DataLayer</AssemblyName>
-    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -55,64 +54,74 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AUTOR.cs">
-      <DependentUpon>BiblosContext.tt</DependentUpon>
+      <DependentUpon>Biblos.tt</DependentUpon>
     </Compile>
-    <Compile Include="BiblosContext.cs">
+    <Compile Include="Biblos.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BiblosContext.tt</DependentUpon>
+      <DependentUpon>Biblos.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="BiblosContext.Designer.cs">
+    <Compile Include="Biblos.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>BiblosContext.edmx</DependentUpon>
+      <DependentUpon>Biblos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Biblos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Biblos.edmx</DependentUpon>
     </Compile>
     <Compile Include="BOOK.cs">
-      <DependentUpon>BiblosContext.tt</DependentUpon>
+      <DependentUpon>Biblos.tt</DependentUpon>
     </Compile>
     <Compile Include="GET_BOOKS_Result.cs">
-      <DependentUpon>BiblosContext.tt</DependentUpon>
+      <DependentUpon>Biblos.tt</DependentUpon>
     </Compile>
     <Compile Include="GET_LESS_SOLD_BOOK_Result.cs">
-      <DependentUpon>BiblosContext.tt</DependentUpon>
+      <DependentUpon>Biblos.tt</DependentUpon>
     </Compile>
     <Compile Include="GET_MOST_SOLD_BOOK_Result.cs">
-      <DependentUpon>BiblosContext.tt</DependentUpon>
+      <DependentUpon>Biblos.tt</DependentUpon>
     </Compile>
     <Compile Include="GET_ONE_BOOK_Result.cs">
-      <DependentUpon>BiblosContext.tt</DependentUpon>
+      <DependentUpon>Biblos.tt</DependentUpon>
     </Compile>
     <Compile Include="GET_SALES_BY_DAY_Result.cs">
-      <DependentUpon>BiblosContext.tt</DependentUpon>
+      <DependentUpon>Biblos.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SALES.cs">
-      <DependentUpon>BiblosContext.tt</DependentUpon>
+      <DependentUpon>Biblos.tt</DependentUpon>
     </Compile>
     <Compile Include="USERS.cs">
-      <DependentUpon>BiblosContext.tt</DependentUpon>
+      <DependentUpon>Biblos.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="BiblosContext.edmx">
+    <EntityDeploy Include="Biblos.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>BiblosContext.Designer.cs</LastGenOutput>
+      <LastGenOutput>Biblos.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="BiblosContext.edmx.diagram">
-      <DependentUpon>BiblosContext.edmx</DependentUpon>
+    <None Include="Biblos.edmx.diagram">
+      <DependentUpon>Biblos.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="BiblosContext.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>BiblosContext.edmx</DependentUpon>
-      <LastGenOutput>BiblosContext.cs</LastGenOutput>
-    </Content>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Content Include="Biblos.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Biblos.edmx</DependentUpon>
+      <LastGenOutput>Biblos.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Biblos.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Biblos.edmx</DependentUpon>
+      <LastGenOutput>Biblos.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

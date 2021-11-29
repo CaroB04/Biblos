@@ -1,0 +1,79 @@
+﻿@model Biblos.DataLayer.BOOK
+
+@{
+    ViewBag.Title = "Comprar";
+}
+@section styles{
+    <style>
+        body {
+            color: #B8E2F2;
+        }
+    </style>    
+}
+
+<h2>Detalles del libro a comprar</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Isbn ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ISBN)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Título")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TITLE)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Fecha de publicación")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_PUBLICATION)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Editorial ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EDITORIAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Cantidad de libros restantes")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STOCK)
+        </dd>
+
+        <dt>
+            @Html.DisplayName("Autor ")
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AUTOR1.C_NAME)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm("Comprado", "Sales", new { idLibro = Model.ID }))
+    {
+        <div class="text-center">
+            <button class="btn btn-primary rounded-pill" type="submit">Confirmar Compra</button>
+        </div>
+    }
+
+</div>
+<p>
+    @Html.ActionLink("Regresar", "Index","Home")
+</p>

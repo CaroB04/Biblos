@@ -1,0 +1,66 @@
+﻿@model Biblos.DataLayer.BOOK
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>BOOK</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ISBN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ISBN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.TITLE)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.TITLE)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DATE_PUBLICATION)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DATE_PUBLICATION)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.EDITORIAL)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.EDITORIAL)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.STOCK)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.STOCK)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.AUTOR1.C_NAME)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.AUTOR1.C_NAME)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
